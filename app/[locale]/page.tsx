@@ -1,6 +1,5 @@
 import { Hero } from "@/components/home/hero";
 import {
-  ImpactMetrics,
   Ecosystem,
   ProgramsOverview,
   ServicesOverview,
@@ -16,7 +15,6 @@ export default async function HomePage() {
   return (
     <>
       <Hero />
-      <ImpactMetrics />
       <Ecosystem />
       <ProgramsOverview />
       <ServicesOverview />

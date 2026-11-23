@@ -21,35 +21,6 @@ import {
 import Link from "next/link";
 import { useScopedI18n } from "@/locales/client";
 
-/* ---------- Impact Metrics ---------- */
-export function ImpactMetrics() {
-  const metric = useScopedI18n("home.metrics");
-  const metrics = [
-    { value: "5,000+", label: metric("youthTrained") },
-    { value: "1,200+", label: metric("jobsCreated") },
-    { value: "800+", label: metric("freelancersActive") },
-    { value: "350+", label: metric("projectsDelivered") },
-    { value: "40+", label: metric("startupsLaunched") },
-    { value: "12", label: metric("countriesReached") },
-  ];
-  return (
-    <Section className="bg-card/40">
-      <div className="grid grid-cols-2 gap-px overflow-hidden rounded-sm border border-border bg-border sm:grid-cols-3 lg:grid-cols-6">
-        {metrics.map((m) => (
-          <div key={m.label} className="bg-background p-6 sm:p-8">
-            <p className="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
-              {m.value}
-            </p>
-            <p className="mt-2 text-xs font-medium uppercase tracking-wide text-muted-foreground">
-              {m.label}
-            </p>
-          </div>
-        ))}
-      </div>
-    </Section>
-  );
-}
-
 /* ---------- Ecosystem Overview ---------- */
 export function Ecosystem() {
   const ecosystemT = useScopedI18n("home.ecosystem");
