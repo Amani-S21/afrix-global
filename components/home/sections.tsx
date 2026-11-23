@@ -52,11 +52,12 @@ export function Ecosystem() {
             title={ecosystemT("title")}
             description={ecosystemT("description")}
           />
-          <div className="mt-8 flex flex-col gap-px overflow-hidden rounded-sm border border-border bg-border">
+          <div className="mt-10 flex flex-col gap-px overflow-hidden rounded-lg border border-border bg-border">
             {pillars.map((p) => (
-              <div key={p.title} className="flex gap-4 bg-background p-6">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-sm border border-border">
-                  <p.icon className="h-5 w-5 text-primary" />
+              <div key={p.title} className="group flex gap-5 bg-background p-6 transition-colors hover:bg-card">
+                <div className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-border">
+                  <span className="absolute -left-px top-3 h-5 w-0.5 bg-brand-blue" />
+                  <p.icon className="h-5 w-5 text-white" />
                 </div>
                 <div>
                   <h3 className="text-base font-semibold text-foreground">
@@ -103,19 +104,19 @@ export function ProgramsOverview() {
           {programT("viewAll")}
         </ActionLink>
       </div>
-      <div className="mt-10 grid gap-px overflow-hidden rounded-sm border border-border bg-border sm:grid-cols-2 lg:grid-cols-5">
+      <div className="mt-12 grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2 lg:grid-cols-5">
         {programs.map((p) => (
           <Link
             key={p.title}
             href="/programs"
-            className="group flex flex-col justify-between gap-8 bg-background p-6 transition-colors hover:bg-card"
+            className="group flex min-h-48 flex-col justify-between gap-8 bg-background p-6 transition-colors hover:bg-white hover:text-black"
           >
-            <p.icon className="h-6 w-6 text-primary" />
+            <p.icon className="h-7 w-7 text-brand-blue transition-colors group-hover:text-black" />
             <div className="flex items-center justify-between">
-              <span className="text-sm font-semibold text-foreground">
+              <span className="text-sm font-semibold text-foreground transition-colors group-hover:text-black">
                 {p.title}
               </span>
-              <ArrowUpRight className="h-4 w-4 text-muted-foreground transition-colors group-hover:text-primary" />
+              <ArrowUpRight className="h-4 w-4 text-muted-foreground transition-colors group-hover:text-black" />
             </div>
           </Link>
         ))}
@@ -148,32 +149,34 @@ export function ServicesOverview() {
   ];
 
   return (
-    <Section className="bg-card/40 py-16 sm:py-24">
+    <Section className="bg-white py-16 text-black sm:py-24">
       <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
         <MediaZone
           src="/images/service.jpg"
           alt="African UI/UX designer working across dual monitors"
           aspect="aspect-[4/3]"
+          className="border-black/10"
         />
         <div>
           <SectionHeading
             eyebrow={serviceT("eyebrow")}
             title={serviceT("title")}
             description={serviceT("description")}
+            className="[&_div_span:last-child]:text-black [&_h2]:text-black [&_p]:text-black/60"
           />
-          <div className="mt-8 grid gap-px overflow-hidden rounded-sm border border-border bg-border sm:grid-cols-2">
+          <div className="mt-10 grid gap-px overflow-hidden rounded-lg border border-black/10 bg-black/10 sm:grid-cols-2">
             {services.map((s) => (
-              <div key={s.title} className="bg-background p-6">
-                <h3 className="text-sm font-semibold text-foreground">
+              <div key={s.title} className="bg-white p-6">
+                <h3 className="text-sm font-semibold text-black">
                   {s.title}
                 </h3>
-                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">
+                <p className="mt-2 text-sm leading-relaxed text-black/60">
                   {s.desc}
                 </p>
               </div>
             ))}
           </div>
-          <ActionLink href="/services" className="mt-8">
+          <ActionLink href="/services" className="mt-8 bg-black text-white hover:bg-brand-blue">
             {serviceT("cta")}
           </ActionLink>
         </div>
@@ -187,7 +190,7 @@ export function InnovationHubFeature() {
   const innovationT = useScopedI18n("home.innovationHub");
   return (
     <Section className="py-16 sm:py-24">
-      <div className="relative overflow-hidden rounded-sm border border-border">
+      <div className="relative overflow-hidden rounded-lg border border-border bg-card">
         <div className="grid lg:grid-cols-2">
           <div className="flex flex-col justify-center p-8 sm:p-12 lg:p-16">
             <Eyebrow>{innovationT("eyebrow")}</Eyebrow>

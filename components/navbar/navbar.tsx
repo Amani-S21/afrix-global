@@ -58,8 +58,8 @@ export function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/80 backdrop-blur-xl">
-      <div className="mx-auto flex min-h-24 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+    <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/90 backdrop-blur-xl">
+      <div className="mx-auto flex min-h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         {/* LOGO */}
         <Link
           href="/"
@@ -69,8 +69,8 @@ export function Navbar() {
           <Image
             src="/afrix.png"
             alt="logo afrix global"
-            width={140}
-            height={40}
+            width={128}
+            height={38}
             priority
           />
         </Link>
@@ -94,7 +94,7 @@ export function Navbar() {
                 <Link
                   href={link.href}
                   className={cn(
-                    "inline-flex items-center gap-1 rounded-sm px-3 py-2 text-sm font-medium transition-colors hover:text-foreground",
+                    "inline-flex items-center gap-1 rounded-md px-3 py-2 text-sm font-medium transition-colors hover:bg-white/5 hover:text-white",
                     pathname === link.href || isOpen
                       ? "text-foreground"
                       : "text-muted-foreground",
@@ -140,13 +140,13 @@ export function Navbar() {
         <div className="hidden items-center gap-3 lg:flex">
           <Link
             href="/contact"
-            className="rounded-sm border border-border px-4 py-2 text-sm font-medium text-foreground transition-colors hover:bg-secondary"
+            className="rounded-md border border-white/20 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:border-white/40 hover:bg-white/5"
           >
             Contact
           </Link>
           <Link
             href="/programs"
-            className="rounded-sm bg-primary px-4 py-2 text-sm font-semibold text-primary-foreground transition-opacity hover:opacity-90"
+            className="rounded-md bg-white px-4 py-2.5 text-sm font-semibold text-black transition-colors hover:bg-brand-blue hover:text-white"
           >
             Join Baobab
           </Link>
@@ -168,7 +168,7 @@ export function Navbar() {
 
       {/* NAVIGATION MOBILE COMPLÈTE */}
       {open && (
-        <div className="border-t border-border bg-background lg:hidden max-h-[calc(100vh-6rem)] overflow-y-auto">
+        <div className="max-h-[calc(100vh-5rem)] overflow-y-auto border-t border-white/10 bg-black lg:hidden">
           <nav className="flex flex-col gap-1 px-4 py-4">
             {navigation.map((link) => {
               const hasChildren = link.children && link.children.length > 0;

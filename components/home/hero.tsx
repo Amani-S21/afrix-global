@@ -8,21 +8,32 @@ export function Hero() {
   const heroT = useScopedI18n("home.hero");
 
   return (
-    <section className="relative overflow-hidden border-b border-border">
-      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-8 lg:px-8 lg:py-24">
-        <div>
-          <div className="inline-flex items-center gap-2 rounded-sm border border-border px-3 py-1">
-            <span className="h-1.5 w-1.5 rounded-sm bg-primary" />
-            <span className="text-xs font-medium text-muted-foreground">
+    <section className="relative isolate flex min-h-[calc(100svh-5rem)] items-end overflow-hidden border-b border-white/15">
+      <Image
+        src="/images/hero.jpg"
+        alt={heroT("imageAlt")}
+        fill
+        priority
+        className="-z-20 object-cover object-center"
+        sizes="100vw"
+      />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-r from-black via-black/85 to-black/20" />
+      <div className="absolute inset-0 -z-10 bg-gradient-to-t from-black via-transparent to-black/20" />
+
+      <div className="mx-auto w-full max-w-7xl px-4 py-16 sm:px-6 sm:py-20 lg:px-8 lg:py-24">
+        <div className="max-w-5xl">
+          <div className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-black/30 px-4 py-2 backdrop-blur-sm">
+            <span className="h-2 w-2 rounded-full bg-brand-blue" />
+            <span className="text-xs font-medium text-white/70">
               {heroT("badge")}
             </span>
           </div>
 
-          <h1 className="mt-6 text-4xl font-bold leading-[1.05] tracking-tight text-foreground text-balance sm:text-5xl lg:text-6xl">
+          <h1 className="mt-7 max-w-4xl text-4xl font-bold leading-[1.04] tracking-[-0.045em] text-white text-balance sm:text-6xl lg:text-7xl">
             {heroT("title")}
           </h1>
 
-          <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground text-pretty">
+          <p className="mt-7 max-w-2xl text-base leading-relaxed text-white/70 text-pretty sm:text-lg">
             {heroT("description")}
           </p>
 
@@ -38,24 +49,13 @@ export function Hero() {
             </ActionLink>
           </div>
 
-          <p className="mt-10 text-sm font-medium text-foreground">
+          <p className="mt-12 border-l-2 border-brand-blue pl-4 text-sm font-semibold text-white">
             {heroT("tagline.train")}{" "}
-            <span className="text-muted-foreground">
+            <span className="text-white/60">
               {heroT("tagline.create")}
             </span>{" "}
-            <span className="text-primary">{heroT("tagline.connect")}</span>
+            <span className="text-white">{heroT("tagline.connect")}</span>
           </p>
-        </div>
-
-        <div className="relative aspect-[5/4] overflow-hidden rounded-sm border border-border lg:aspect-[4/3]">
-          <Image
-            src="/images/hero.jpg"
-            alt={heroT("imageAlt")}
-            fill
-            priority
-            className="object-cover"
-            sizes="(max-width: 1024px) 100vw, 50vw"
-          />
         </div>
       </div>
     </section>

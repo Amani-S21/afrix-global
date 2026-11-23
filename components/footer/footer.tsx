@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { Globe, Link2, Mail, Share } from "lucide-react";
 import { useScopedI18n } from "@/locales/client";
 
@@ -65,18 +66,12 @@ export function Footer() {
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-2">
           {/* Brand */}
-          <div className="max-w-sm">
+          <div className="max-w-md">
             <Link href="/" className="flex items-center gap-2">
-              <div className="flex h-8 w-8 items-center justify-center rounded bg-primary">
-                <span className="font-bold text-primary-foreground">A</span>
-              </div>
-
-              <span className="text-lg font-bold text-foreground">
-                Afrix Global
-              </span>
+              <Image src="/afrix.png" alt="Afrix Global" width={150} height={46} />
             </Link>
 
-            <h2 className="mt-6 text-2xl font-bold leading-tight text-balance">
+            <h2 className="mt-8 text-3xl font-bold leading-tight tracking-[-0.03em] text-balance">
               {t("headline")}
             </h2>
 
@@ -93,7 +88,7 @@ export function Footer() {
                     key={item.label}
                     href={item.href}
                     aria-label={item.label}
-                    className="flex h-10 w-10 items-center justify-center rounded border border-border transition-colors hover:border-primary hover:text-primary"
+                    className="flex h-10 w-10 items-center justify-center rounded-full border border-white/15 transition-colors hover:border-brand-blue hover:bg-brand-blue hover:text-white"
                   >
                     <Icon className="h-4 w-4" />
                   </a>

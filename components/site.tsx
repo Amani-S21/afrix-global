@@ -24,8 +24,8 @@ export function Section({
 export function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
     <div className="flex items-center gap-2">
-      <span className="h-1.5 w-1.5 rounded-sm bg-primary" />
-      <span className="text-xs font-semibold uppercase tracking-widest text-primary">{children}</span>
+      <span className="h-2 w-2 rounded-full bg-brand-blue" />
+      <span className="text-sm font-semibold uppercase tracking-[0.16em] text-foreground">{children}</span>
     </div>
   )
 }
@@ -45,7 +45,7 @@ export function SectionHeading({
   return (
     <div className={cn("max-w-2xl", className)}>
       {eyebrow ? <Eyebrow>{eyebrow}</Eyebrow> : null}
-      <h2 className="mt-4 text-3xl font-bold tracking-tight text-foreground text-balance sm:text-4xl">{title}</h2>
+      <h2 className="mt-5 text-3xl font-bold leading-tight tracking-[-0.035em] text-foreground text-balance sm:text-5xl">{title}</h2>
       {description ? (
         <p className="mt-4 text-base leading-relaxed text-muted-foreground sm:text-lg">{description}</p>
       ) : null}
@@ -69,10 +69,10 @@ export function ActionLink({
     <Link
       href={href}
       className={cn(
-        "inline-flex items-center justify-center rounded-sm px-5 py-2.5 text-sm font-semibold transition-all",
+        "inline-flex min-h-11 items-center justify-center rounded-md px-5 py-3 text-sm font-semibold transition-all focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring",
         variant === "primary"
-          ? "bg-primary text-primary-foreground hover:opacity-90"
-          : "border border-border text-foreground hover:bg-secondary",
+          ? "bg-white text-black hover:bg-brand-blue hover:text-white"
+          : "border border-white/20 text-white hover:border-white/40 hover:bg-white/5",
         className,
       )}
     >
@@ -120,11 +120,12 @@ export function PageHero({
   children?: React.ReactNode
 }) {
   return (
-    <section className="border-b border-border">
+    <section className="relative overflow-hidden border-b border-border">
+      <div className="absolute inset-y-0 right-0 w-1/3 bg-[radial-gradient(circle_at_center,var(--brand-blue),transparent_70%)] opacity-10" />
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
-        <div className="max-w-3xl">
+        <div className="relative max-w-4xl">
           <Eyebrow>{eyebrow}</Eyebrow>
-          <h1 className="mt-5 text-4xl font-bold tracking-tight text-foreground text-balance sm:text-5xl lg:text-6xl">
+          <h1 className="mt-6 text-4xl font-bold leading-[1.05] tracking-[-0.045em] text-foreground text-balance sm:text-6xl lg:text-7xl">
             {title}
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground text-pretty">{description}</p>
@@ -148,16 +149,16 @@ export function CtaBand({
   secondary?: { href: string; label: string }
 }) {
   return (
-    <section className="border-b border-border">
-      <div className="mx-auto max-w-7xl px-4 py-24 sm:px-6 lg:px-8">
-        <div className="rounded-sm border border-border bg-card p-10 sm:p-16">
+    <section className="border-b border-border bg-white text-black">
+      <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+        <div className="border border-black/10 p-8 sm:p-14">
           <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-foreground text-balance sm:text-4xl">{title}</h2>
-            <p className="mx-auto mt-4 max-w-xl text-base leading-relaxed text-muted-foreground">{description}</p>
+            <h2 className="text-3xl font-bold tracking-[-0.035em] text-black text-balance sm:text-5xl">{title}</h2>
+            <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-black/65">{description}</p>
             <div className="mt-8 flex flex-wrap justify-center gap-3">
-              <ActionLink href={primary.href}>{primary.label}</ActionLink>
+              <ActionLink href={primary.href} className="bg-black text-white hover:bg-brand-blue">{primary.label}</ActionLink>
               {secondary ? (
-                <ActionLink href={secondary.href} variant="outline">
+                <ActionLink href={secondary.href} variant="outline" className="border-black/20 text-black hover:border-black/40 hover:bg-black/5">
                   {secondary.label}
                 </ActionLink>
               ) : null}
