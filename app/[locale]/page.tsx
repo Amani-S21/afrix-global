@@ -1,6 +1,8 @@
 import { Hero } from "@/components/home/hero";
 import {
   Ecosystem,
+  SoftwareExpertise,
+  DeliveryProcess,
   ProgramsOverview,
   ServicesOverview,
   InnovationHubFeature,
@@ -13,9 +15,11 @@ export default async function HomePage() {
   return (
     <>
       <Hero />
+      <SoftwareExpertise />
+      <ServicesOverview />
+      <DeliveryProcess />
       <Ecosystem />
       <ProgramsOverview />
-      <ServicesOverview />
       <InnovationHubFeature />
       <CtaBand
         title={t("title")}

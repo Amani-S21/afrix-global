@@ -10,16 +10,132 @@ import {
 import {
   BrainCircuit,
   Briefcase,
+  CloudCog,
   Code2,
+  Database,
   GraduationCap,
   Megaphone,
-  ArrowUpRight,
+  MonitorSmartphone,
+  Plus,
   Rocket,
+  Search,
+  ShieldCheck,
   Smartphone,
   PenTool,
+  Workflow,
 } from "lucide-react";
 import Link from "next/link";
 import { useScopedI18n } from "@/locales/client";
+
+/* ---------- Software engineering ---------- */
+export function SoftwareExpertise() {
+  const t = useScopedI18n("home.expertise");
+  const capabilities = [
+    { icon: MonitorSmartphone, key: "web" },
+    { icon: Smartphone, key: "mobile" },
+    { icon: Database, key: "software" },
+    { icon: CloudCog, key: "cloud" },
+  ] as const;
+
+  return (
+    <Section className="py-16 sm:py-24">
+      <div className="grid gap-12 lg:grid-cols-[0.9fr_1.1fr] lg:items-end">
+        <SectionHeading
+          eyebrow={t("eyebrow")}
+          title={t("title")}
+          description={t("description")}
+        />
+        <div className="flex flex-wrap gap-3 lg:justify-end">
+          {(["performance", "security", "scalability"] as const).map((key) => (
+            <span
+              key={key}
+              className="rounded-full border border-white/15 bg-white/5 px-4 py-2 text-sm font-medium text-white/70"
+            >
+              {t("standards." + key)}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      <div className="mt-12 grid overflow-hidden rounded-lg border border-border md:grid-cols-2 xl:grid-cols-4">
+        {capabilities.map(({ icon: Icon, key }, index) => (
+          <article
+            key={key}
+            className="group relative min-h-72 border-b border-border bg-card p-7 transition-colors hover:bg-white md:border-r xl:border-b-0"
+          >
+            <div className="flex items-start justify-between">
+              <div className="flex h-12 w-12 items-center justify-center rounded-md border border-white/15 bg-black text-white transition-colors group-hover:border-black/15">
+                <Icon className="h-6 w-6" />
+              </div>
+              <span
+                className={
+                  index === 0
+                    ? "h-2.5 w-2.5 rounded-full bg-brand-blue"
+                    : index === 1
+                      ? "h-2.5 w-2.5 rounded-full bg-brand-red"
+                      : index === 2
+                        ? "h-2.5 w-2.5 rounded-full bg-brand-yellow"
+                        : "h-2.5 w-2.5 rounded-full bg-brand-green"
+                }
+              />
+            </div>
+            <div className="mt-16">
+              <h3 className="text-xl font-semibold tracking-tight text-white transition-colors group-hover:text-black">
+                {t("items." + key + ".title")}
+              </h3>
+              <p className="mt-3 text-sm leading-relaxed text-white/60 transition-colors group-hover:text-black/60">
+                {t("items." + key + ".description")}
+              </p>
+            </div>
+          </article>
+        ))}
+      </div>
+    </Section>
+  );
+}
+
+/* ---------- Delivery method ---------- */
+export function DeliveryProcess() {
+  const t = useScopedI18n("home.process");
+  const steps = [
+    { icon: Search, key: "discover" },
+    { icon: PenTool, key: "design" },
+    { icon: Code2, key: "build" },
+    { icon: Workflow, key: "evolve" },
+  ] as const;
+
+  return (
+    <Section className="py-16 sm:py-24">
+      <div className="grid gap-12 lg:grid-cols-[0.8fr_1.2fr]">
+        <div>
+          <SectionHeading
+            eyebrow={t("eyebrow")}
+            title={t("title")}
+            description={t("description")}
+          />
+          <div className="mt-8 flex items-center gap-3 text-sm text-white/60">
+            <ShieldCheck className="h-5 w-5 text-brand-blue" />
+            <span>{t("commitment")}</span>
+          </div>
+        </div>
+
+        <div className="grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2">
+          {steps.map(({ icon: Icon, key }) => (
+            <article key={key} className="bg-background p-7">
+              <Icon className="h-6 w-6 text-brand-blue" />
+              <h3 className="mt-8 text-lg font-semibold text-white">
+                {t("steps." + key + ".title")}
+              </h3>
+              <p className="mt-2 text-sm leading-relaxed text-white/60">
+                {t("steps." + key + ".description")}
+              </p>
+            </article>
+          ))}
+        </div>
+      </div>
+    </Section>
+  );
+}
 
 /* ---------- Ecosystem Overview ---------- */
 export function Ecosystem() {
@@ -116,7 +232,7 @@ export function ProgramsOverview() {
               <span className="text-sm font-semibold text-foreground transition-colors group-hover:text-black">
                 {p.title}
               </span>
-              <ArrowUpRight className="h-4 w-4 text-muted-foreground transition-colors group-hover:text-black" />
+              <Plus className="h-4 w-4 text-muted-foreground transition-colors group-hover:text-black" />
             </div>
           </Link>
         ))}

@@ -12,6 +12,8 @@ export default {
     projects: "Projects",
     impact: "Impact",
     partners: "Partners",
+    contact: "Contact",
+    startProject: "Start a project",
   },
 
   footer: {
@@ -45,16 +47,16 @@ export default {
   },
   home: {
     hero: {
-      badge: "Talent · Innovation · Opportunity Ecosystem",
+      badge: "Software engineering · Product design · Innovation",
 
-      title: "Building Africa's Next Generation of Digital Talent & Innovation",
+      title: "We build the digital products that move businesses forward",
 
       description:
-        "Afrix Global is a Talent, Innovation & Opportunity Ecosystem that trains, creates and connects African digital talent to global opportunities.",
+        "Websites, mobile applications, and custom software: Afrix Global turns ideas into reliable, useful, and scalable digital solutions.",
 
       cta: {
-        joinProgram: "Join Baobab Program",
-        startups: "Talent 4 Startups",
+        joinProgram: "Start a project",
+        startups: "Explore our services",
         hireTalent: "Hire Our Talent",
       },
 
@@ -66,6 +68,70 @@ export default {
 
       imageAlt:
         "Young African digital professionals collaborating in a modern tech office",
+    },
+
+    expertise: {
+      eyebrow: "Software engineering",
+      title: "Digital solutions designed to last",
+      description:
+        "We bring strategy, design, and technology together to create fast, intuitive products aligned with each organisation's goals.",
+      standards: {
+        performance: "Performance",
+        security: "Security",
+        scalability: "Scalability",
+      },
+      items: {
+        web: {
+          title: "Websites & platforms",
+          description:
+            "Corporate websites, business platforms, and modern web experiences that are fast and accessible.",
+        },
+        mobile: {
+          title: "Mobile applications",
+          description:
+            "Smooth, user-focused mobile applications delivered from initial idea to deployment.",
+        },
+        software: {
+          title: "Custom software",
+          description:
+            "Internal tools, management systems, and business solutions tailored to your workflows.",
+        },
+        cloud: {
+          title: "Cloud & integrations",
+          description:
+            "APIs, automation, and reliable architectures that connect and scale your services.",
+        },
+      },
+    },
+
+    process: {
+      eyebrow: "Our approach",
+      title: "From idea to reliable product",
+      description:
+        "A structured and transparent collaboration that reduces risk, accelerates delivery, and creates a genuinely useful solution.",
+      commitment: "Quality, transparency, and continuous improvement at every stage.",
+      steps: {
+        discover: {
+          title: "Discover",
+          description:
+            "We clarify your goals, users, priorities, and project constraints.",
+        },
+        design: {
+          title: "Design",
+          description:
+            "We shape the experience and validate interfaces before development begins.",
+        },
+        build: {
+          title: "Build",
+          description:
+            "We deliver iteratively with maintainable code and continuous quality checks.",
+        },
+        evolve: {
+          title: "Launch & evolve",
+          description:
+            "We prepare deployment, monitoring, and the product's next improvements.",
+        },
+      },
     },
 
     metrics: {

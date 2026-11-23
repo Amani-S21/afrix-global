@@ -38,9 +38,9 @@ export function Hero() {
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
-            <ActionLink href="/programs">{heroT("cta.joinProgram")}</ActionLink>
+            <ActionLink href="/contact">{heroT("cta.joinProgram")}</ActionLink>
 
-            <ActionLink href="/talent-4-startups" variant="outline">
+            <ActionLink href="/services" variant="outline">
               {heroT("cta.startups")}
             </ActionLink>
 

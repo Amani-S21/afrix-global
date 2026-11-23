@@ -11,6 +11,8 @@ export default {
     innovationHub: "Hub d'Innovation",
     impact: "Impact",
     partners: "Partenaires",
+    contact: "Contact",
+    startProject: "Démarrer un projet",
   },
 
   footer: {
@@ -44,17 +46,17 @@ export default {
   },
   home: {
     hero: {
-      badge: "Talents · Innovation · Opportunités",
+      badge: "Ingénierie logicielle · Design produit · Innovation",
 
       title:
-        "Former la prochaine génération de talents numériques et d'innovation en Afrique",
+        "Nous concevons les produits numériques qui font avancer les entreprises",
 
       description:
-        "Afrix Global est un écosystème de talents, d'innovation et d'opportunités qui forme, crée et connecte les talents numériques africains aux opportunités mondiales.",
+        "Sites web, applications mobiles et logiciels sur mesure : Afrix Global transforme vos idées en solutions fiables, utiles et prêtes à évoluer.",
 
       cta: {
-        joinProgram: "Rejoindre le programme Baobab",
-        startups: "Talent 4 Startups",
+        joinProgram: "Démarrer un projet",
+        startups: "Explorer nos services",
         hireTalent: "Recruter nos talents",
       },
 
@@ -66,6 +68,70 @@ export default {
 
       imageAlt:
         "Jeunes professionnels africains du numérique collaborant dans un environnement technologique moderne",
+    },
+
+    expertise: {
+      eyebrow: "Ingénierie logicielle",
+      title: "Des solutions numériques conçues pour durer",
+      description:
+        "Nous réunissons stratégie, design et technologie pour construire des produits rapides, intuitifs et adaptés aux objectifs de chaque organisation.",
+      standards: {
+        performance: "Performance",
+        security: "Sécurité",
+        scalability: "Évolutivité",
+      },
+      items: {
+        web: {
+          title: "Sites & plateformes web",
+          description:
+            "Sites vitrines, plateformes métiers et expériences web modernes, rapides et accessibles.",
+        },
+        mobile: {
+          title: "Applications mobiles",
+          description:
+            "Applications mobiles fluides et centrées sur les usages, de l'idée jusqu'au déploiement.",
+        },
+        software: {
+          title: "Logiciels sur mesure",
+          description:
+            "Outils internes, systèmes de gestion et solutions métier adaptés à vos processus.",
+        },
+        cloud: {
+          title: "Cloud & intégrations",
+          description:
+            "API, automatisations et architectures fiables pour connecter et faire évoluer vos services.",
+        },
+      },
+    },
+
+    process: {
+      eyebrow: "Notre méthode",
+      title: "De l'idée à un produit fiable",
+      description:
+        "Une collaboration structurée et transparente pour réduire les risques, accélérer la livraison et créer une solution réellement utile.",
+      commitment: "Qualité, transparence et amélioration continue à chaque étape.",
+      steps: {
+        discover: {
+          title: "Comprendre",
+          description:
+            "Nous clarifions vos objectifs, vos utilisateurs et les contraintes du projet.",
+        },
+        design: {
+          title: "Concevoir",
+          description:
+            "Nous structurons l'expérience et validons les interfaces avant le développement.",
+        },
+        build: {
+          title: "Développer",
+          description:
+            "Nous construisons par itérations avec un code maintenable et des contrôles qualité.",
+        },
+        evolve: {
+          title: "Déployer & faire évoluer",
+          description:
+            "Nous préparons la mise en ligne, le suivi et les prochaines améliorations.",
+        },
+      },
     },
 
     metrics: {

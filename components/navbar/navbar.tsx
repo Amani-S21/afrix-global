@@ -142,13 +142,13 @@ export function Navbar() {
             href="/contact"
             className="rounded-md border border-white/20 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:border-white/40 hover:bg-white/5"
           >
-            Contact
+            {t("contact")}
           </Link>
           <Link
             href="/programs"
             className="rounded-md bg-white px-4 py-2.5 text-sm font-semibold text-black transition-colors hover:bg-brand-blue hover:text-white"
           >
-            Join Baobab
+            {t("startProject")}
           </Link>
         </div>
 
@@ -234,14 +234,14 @@ export function Navbar() {
                 onClick={() => setOpen(false)}
                 className="rounded-sm border border-border px-4 py-2.5 text-center text-sm font-medium text-foreground"
               >
-                Contact
+                {t("contact")}
               </Link>
               <Link
                 href="/programs"
                 onClick={() => setOpen(false)}
                 className="rounded-sm bg-primary px-4 py-2.5 text-center text-sm font-semibold text-primary-foreground"
               >
-                Join Baobab
+                {t("startProject")}
               </Link>
             </div>
           </nav>
