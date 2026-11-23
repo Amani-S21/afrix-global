@@ -44,7 +44,7 @@ export function Ecosystem() {
   ];
 
   return (
-    <Section>
+    <Section className="py-16 sm:py-24">
       <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
         <div>
           <SectionHeading
@@ -92,7 +92,7 @@ export function ProgramsOverview() {
     { icon: Megaphone, title: programT("items.marketing") },
   ];
   return (
-    <Section>
+    <Section className="py-16 sm:py-24">
       <div className="flex flex-col items-start justify-between gap-6 sm:flex-row sm:items-end">
         <SectionHeading
           eyebrow={programT("eyebrow")}
@@ -148,7 +148,7 @@ export function ServicesOverview() {
   ];
 
   return (
-    <Section className="bg-card/40">
+    <Section className="bg-card/40 py-16 sm:py-24">
       <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
         <MediaZone
           src="/images/service.jpg"
@@ -186,7 +186,7 @@ export function ServicesOverview() {
 export function InnovationHubFeature() {
   const innovationT = useScopedI18n("home.innovationHub");
   return (
-    <Section>
+    <Section className="py-16 sm:py-24">
       <div className="relative overflow-hidden rounded-sm border border-border">
         <div className="grid lg:grid-cols-2">
           <div className="flex flex-col justify-center p-8 sm:p-12 lg:p-16">
@@ -239,7 +239,7 @@ const stories = [
 
 export function SuccessStories() {
   return (
-    <Section>
+    <Section className="py-16 sm:py-24">
       <SectionHeading
         eyebrow="Success Stories"
         title="Real journeys, real outcomes"
@@ -277,7 +277,7 @@ export function PartnersStrip() {
     "BuildAfrica",
   ];
   return (
-    <Section className="bg-card/40">
+    <Section className="bg-card/40 py-16 sm:py-24">
       <p className="text-center text-xs font-semibold uppercase tracking-widest text-muted-foreground">
         {partenerT("title")}
       </p>

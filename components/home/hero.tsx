@@ -9,7 +9,7 @@ export function Hero() {
 
   return (
     <section className="relative overflow-hidden border-b border-border">
-      <div className="mx-auto grid max-w-7xl gap-12 px-4 py-20 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-8 lg:px-8 lg:py-28">
+      <div className="mx-auto grid max-w-7xl gap-10 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center lg:gap-8 lg:px-8 lg:py-24">
         <div>
           <div className="inline-flex items-center gap-2 rounded-sm border border-border px-3 py-1">
             <span className="h-1.5 w-1.5 rounded-sm bg-primary" />
