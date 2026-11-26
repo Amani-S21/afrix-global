@@ -219,8 +219,8 @@ export function Ecosystem() {
             {pillars.map((p, index) => (
               <motion.div
                 key={p.title}
-                initial={{ opacity: 0, x: -20 }}
-                whileInView={{ opacity: 1, x: 0 }}
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0.3 }}
                 transition={{ duration: 0.4, delay: index * 0.08 }}
                 className="group flex gap-5 bg-background p-6 transition-colors hover:bg-card"

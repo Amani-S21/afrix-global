@@ -1,6 +1,7 @@
 "use client"
 
 import type React from "react"
+import { Children } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { motion, useReducedMotion } from "framer-motion"
@@ -14,16 +15,35 @@ function ScrollReveal({
   className?: string
 }) {
   const reduceMotion = useReducedMotion()
+  const containerVariants = {
+    hidden: {},
+    visible: {
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.04,
+      },
+    },
+  }
+  const itemVariants = {
+    hidden: { opacity: 0, y: 48 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.65, ease: [0.22, 1, 0.36, 1] },
+    },
+  }
 
   return (
     <motion.div
-      initial={reduceMotion ? false : { opacity: 0, y: 42 }}
-      whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+      initial={reduceMotion ? false : "hidden"}
+      whileInView={reduceMotion ? undefined : "visible"}
       viewport={{ once: true, amount: 0.12, margin: "0px 0px -70px 0px" }}
-      transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+      variants={containerVariants}
       className={className}
     >
-      {children}
+      {Children.map(children, (child) => (
+        <motion.div variants={itemVariants}>{child}</motion.div>
+      ))}
     </motion.div>
   )
 }
