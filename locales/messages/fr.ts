@@ -45,6 +45,14 @@ export default {
     footerTagline: "Talent · Innovation · Opportunité",
   },
   home: {
+    ticker: {
+      web: "Sites web",
+      platforms: "Plateformes métiers",
+      software: "Logiciels sur mesure",
+      design: "Design UI/UX",
+      cloud: "Cloud & API",
+      data: "Data & IA",
+    },
     hero: {
       badge: "Ingénierie logicielle · Design produit · Innovation",
 

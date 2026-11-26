@@ -1,7 +1,32 @@
+"use client"
+
 import type React from "react"
 import Link from "next/link"
 import Image from "next/image"
+import { motion, useReducedMotion } from "framer-motion"
 import { cn } from "@/lib/utils"
+
+function ScrollReveal({
+  children,
+  className,
+}: {
+  children: React.ReactNode
+  className?: string
+}) {
+  const reduceMotion = useReducedMotion()
+
+  return (
+    <motion.div
+      initial={reduceMotion ? false : { opacity: 0, y: 42 }}
+      whileInView={reduceMotion ? undefined : { opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.12, margin: "0px 0px -70px 0px" }}
+      transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+      className={className}
+    >
+      {children}
+    </motion.div>
+  )
+}
 
 /* ---------- Section ---------- */
 export function Section({
@@ -15,7 +40,9 @@ export function Section({
 }) {
   return (
     <section id={id} className={cn("border-b border-border py-20 sm:py-28", className)}>
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">{children}</div>
+      <ScrollReveal className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {children}
+      </ScrollReveal>
     </section>
   )
 }
@@ -96,8 +123,8 @@ export function MediaZone({
   caption?: string
 }) {
   return (
-    <div className={cn("relative overflow-hidden rounded-sm border border-border bg-card", aspect, className)}>
-      <Image src={src || "/placeholder.svg"} alt={alt} fill className="object-cover" sizes="(max-width: 1024px) 100vw, 50vw" />
+    <div className={cn("group relative overflow-hidden rounded-sm border border-border bg-card", aspect, className)}>
+      <Image src={src || "/placeholder.svg"} alt={alt} fill className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025]" sizes="(max-width: 1024px) 100vw, 50vw" />
       {caption ? (
         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-4">
           <p className="text-sm font-medium text-foreground">{caption}</p>
@@ -123,14 +150,14 @@ export function PageHero({
     <section className="relative overflow-hidden border-b border-border">
       <div className="absolute inset-y-0 right-0 w-1/3 bg-[radial-gradient(circle_at_center,var(--brand-blue),transparent_70%)] opacity-10" />
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
-        <div className="relative max-w-4xl">
+        <ScrollReveal className="relative max-w-4xl">
           <Eyebrow>{eyebrow}</Eyebrow>
           <h1 className="mt-6 text-4xl font-bold leading-[1.05] tracking-[-0.045em] text-foreground text-balance sm:text-6xl lg:text-7xl">
             {title}
           </h1>
           <p className="mt-6 text-lg leading-relaxed text-muted-foreground text-pretty">{description}</p>
           {children ? <div className="mt-8 flex flex-wrap gap-3">{children}</div> : null}
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   )
@@ -151,7 +178,7 @@ export function CtaBand({
   return (
     <section className="border-b border-border bg-white text-black">
       <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
-        <div className="border border-black/10 p-8 sm:p-14">
+        <ScrollReveal className="border border-black/10 p-8 sm:p-14">
           <div className="mx-auto max-w-2xl text-center">
             <h2 className="text-3xl font-bold tracking-[-0.035em] text-black text-balance sm:text-5xl">{title}</h2>
             <p className="mx-auto mt-5 max-w-xl text-base leading-relaxed text-black/65">{description}</p>
@@ -164,7 +191,7 @@ export function CtaBand({
               ) : null}
             </div>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   )

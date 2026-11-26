@@ -46,6 +46,14 @@ export default {
     footerTagline: "Talent · Innovation · Opportunity",
   },
   home: {
+    ticker: {
+      web: "Websites",
+      platforms: "Business platforms",
+      software: "Custom software",
+      design: "UI/UX design",
+      cloud: "Cloud & API",
+      data: "Data & AI",
+    },
     hero: {
       badge: "Software engineering · Product design · Innovation",
 

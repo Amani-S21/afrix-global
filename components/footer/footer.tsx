@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { Globe, Link2, Mail, Share } from "lucide-react";
 import { useScopedI18n } from "@/locales/client";
 
@@ -63,7 +64,13 @@ export function Footer() {
 
   return (
     <footer className="border-t border-border bg-background">
-      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <motion.div
+        initial={{ opacity: 0, y: 36 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.15 }}
+        transition={{ duration: 0.65, ease: [0.22, 1, 0.36, 1] }}
+        className="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8"
+      >
         <div className="grid gap-12 lg:grid-cols-2">
           {/* Brand */}
           <div className="max-w-md">
@@ -130,7 +137,7 @@ export function Footer() {
 
           <p className="text-sm text-muted-foreground">{t("footerTagline")}</p>
         </div>
-      </div>
+      </motion.div>
     </footer>
   );
 }

@@ -24,7 +24,44 @@ import {
   Workflow,
 } from "lucide-react";
 import Link from "next/link";
+import { motion } from "framer-motion";
 import { useScopedI18n } from "@/locales/client";
+
+/* ---------- Capabilities ticker ---------- */
+export function CapabilitiesTicker() {
+  const t = useScopedI18n("home.ticker");
+  const keys = ["web", "platforms", "software", "design", "cloud", "data"] as const;
+  const items = [...keys, ...keys];
+
+  return (
+    <div className="overflow-hidden border-b border-white/10 bg-white py-4 text-black">
+      <motion.div
+        animate={{ x: ["0%", "-50%"] }}
+        transition={{ duration: 24, ease: "linear", repeat: Infinity }}
+        className="flex w-max items-center"
+      >
+        {items.map((key, index) => (
+          <div key={key + index} className="flex items-center">
+            <span className="px-7 text-sm font-semibold uppercase tracking-[0.14em] sm:px-10">
+              {t(key)}
+            </span>
+            <span
+              className={
+                index % 4 === 0
+                  ? "h-2 w-2 rounded-full bg-brand-blue"
+                  : index % 4 === 1
+                    ? "h-2 w-2 rounded-full bg-brand-red"
+                    : index % 4 === 2
+                      ? "h-2 w-2 rounded-full bg-brand-yellow"
+                      : "h-2 w-2 rounded-full bg-brand-green"
+              }
+            />
+          </div>
+        ))}
+      </motion.div>
+    </div>
+  );
+}
 
 /* ---------- Software engineering ---------- */
 export function SoftwareExpertise() {
@@ -57,8 +94,13 @@ export function SoftwareExpertise() {
 
       <div className="mt-12 grid overflow-hidden rounded-lg border border-border md:grid-cols-3">
         {capabilities.map(({ icon: Icon, key }, index) => (
-          <article
+          <motion.article
             key={key}
+            initial={{ opacity: 0, y: 24 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            whileHover={{ y: -6 }}
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.45, delay: index * 0.06 }}
             className="group relative min-h-72 border-b border-border bg-card p-7 transition-colors hover:bg-white md:border-r md:border-b-0 md:last:border-r-0"
           >
             <div className="flex items-start justify-between">
@@ -85,7 +127,7 @@ export function SoftwareExpertise() {
                 {t("items." + key + ".description")}
               </p>
             </div>
-          </article>
+          </motion.article>
         ))}
       </div>
     </Section>
@@ -118,8 +160,15 @@ export function DeliveryProcess() {
         </div>
 
         <div className="grid gap-px overflow-hidden rounded-lg border border-border bg-border sm:grid-cols-2">
-          {steps.map(({ icon: Icon, key }) => (
-            <article key={key} className="bg-background p-7">
+          {steps.map(({ icon: Icon, key }, index) => (
+            <motion.article
+              key={key}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.25 }}
+              transition={{ duration: 0.45, delay: index * 0.07 }}
+              className="bg-background p-7"
+            >
               <Icon className="h-6 w-6 text-brand-blue" />
               <h3 className="mt-8 text-lg font-semibold text-white">
                 {t("steps." + key + ".title")}
@@ -127,7 +176,7 @@ export function DeliveryProcess() {
               <p className="mt-2 text-sm leading-relaxed text-white/60">
                 {t("steps." + key + ".description")}
               </p>
-            </article>
+            </motion.article>
           ))}
         </div>
       </div>
@@ -167,8 +216,15 @@ export function Ecosystem() {
             description={ecosystemT("description")}
           />
           <div className="mt-10 flex flex-col gap-px overflow-hidden rounded-lg border border-border bg-border">
-            {pillars.map((p) => (
-              <div key={p.title} className="group flex gap-5 bg-background p-6 transition-colors hover:bg-card">
+            {pillars.map((p, index) => (
+              <motion.div
+                key={p.title}
+                initial={{ opacity: 0, x: -20 }}
+                whileInView={{ opacity: 1, x: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.4, delay: index * 0.08 }}
+                className="group flex gap-5 bg-background p-6 transition-colors hover:bg-card"
+              >
                 <div className="relative flex h-11 w-11 shrink-0 items-center justify-center rounded-md border border-border">
                   <span className="absolute -left-px top-3 h-5 w-0.5 bg-brand-blue" />
                   <p.icon className="h-5 w-5 text-white" />
@@ -181,7 +237,7 @@ export function Ecosystem() {
                     {p.desc}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -222,7 +278,7 @@ export function ProgramsOverview() {
           <Link
             key={p.title}
             href="/programs"
-            className="group flex min-h-48 flex-col justify-between gap-8 bg-background p-6 transition-colors hover:bg-white hover:text-black"
+            className="group flex min-h-48 flex-col justify-between gap-8 bg-background p-6 transition-all duration-300 hover:-translate-y-1 hover:bg-white hover:text-black"
           >
             <p.icon className="h-7 w-7 text-brand-blue transition-colors group-hover:text-black" />
             <div className="flex items-center justify-between">
@@ -278,15 +334,22 @@ export function ServicesOverview() {
             className="[&_div_span:last-child]:text-black [&_h2]:text-black [&_p]:text-black/60"
           />
           <div className="mt-10 grid gap-px overflow-hidden rounded-lg border border-black/10 bg-black/10 sm:grid-cols-2">
-            {services.map((s) => (
-              <div key={s.title} className="bg-white p-6">
+            {services.map((s, index) => (
+              <motion.div
+                key={s.title}
+                initial={{ opacity: 0, y: 18 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, amount: 0.3 }}
+                transition={{ duration: 0.4, delay: index * 0.07 }}
+                className="bg-white p-6"
+              >
                 <h3 className="text-sm font-semibold text-black">
                   {s.title}
                 </h3>
                 <p className="mt-2 text-sm leading-relaxed text-black/60">
                   {s.desc}
                 </p>
-              </div>
+              </motion.div>
             ))}
           </div>
           <ActionLink href="/services" className="mt-8 bg-black text-white hover:bg-brand-blue">
