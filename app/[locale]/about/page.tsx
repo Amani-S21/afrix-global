@@ -59,6 +59,7 @@ export default async function AboutPage() {
             src="/images/about1.jpg"
             alt={t("mission.imageAlt")}
             aspect="aspect-[4/3]"
+            shape="left"
           />
         </div>
       </Section>
@@ -71,6 +72,7 @@ export default async function AboutPage() {
             alt={t("vision.imageAlt")}
             aspect="aspect-[4/3]"
             className="lg:order-2"
+            shape="right"
           />
 
           <div className="lg:order-1">

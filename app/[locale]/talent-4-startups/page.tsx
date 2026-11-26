@@ -129,6 +129,7 @@ export default function Talent4StartupsPage() {
               src="/images/talent2.jpg"
               alt="African digital talent working remotely"
               aspect="aspect-[4/3]"
+              shape="left"
             />
 
             <div>
@@ -188,6 +189,7 @@ export default function Talent4StartupsPage() {
               src="/images/talent3.jpg"
               alt="Startup team collaborating on a project"
               aspect="aspect-[4/3]"
+              shape="right"
             />
           </div>
         </div>

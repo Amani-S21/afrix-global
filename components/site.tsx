@@ -135,15 +135,26 @@ export function MediaZone({
   className,
   aspect = "aspect-[4/3]",
   caption,
+  shape = "left",
 }: {
   src: string
   alt: string
   className?: string
   aspect?: string
   caption?: string
+  shape?: "left" | "right" | "soft"
 }) {
   return (
-    <div className={cn("group relative overflow-hidden rounded-sm border border-border bg-card", aspect, className)}>
+    <div
+      className={cn(
+        "group relative overflow-hidden border border-border bg-card shadow-2xl shadow-black/20",
+        shape === "left" && "media-organic-left",
+        shape === "right" && "media-organic-right",
+        shape === "soft" && "rounded-lg",
+        aspect,
+        className,
+      )}
+    >
       <Image src={src || "/placeholder.svg"} alt={alt} fill className="object-cover transition-transform duration-700 ease-out group-hover:scale-[1.025]" sizes="(max-width: 1024px) 100vw, 50vw" />
       {caption ? (
         <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-background/90 to-transparent p-4">

@@ -245,6 +245,7 @@ export function Ecosystem() {
           src="/images/ecosystem.jpg"
           alt={ecosystemT("imageAlt")}
           aspect="aspect-[4/5]"
+          shape="right"
         />
       </div>
     </Section>
@@ -325,6 +326,7 @@ export function ServicesOverview() {
           alt="African UI/UX designer working across dual monitors"
           aspect="aspect-[4/3]"
           className="border-black/10"
+          shape="left"
         />
         <div>
           <SectionHeading
@@ -386,6 +388,7 @@ export function InnovationHubFeature() {
               alt={innovationT("imageAlt")}
               aspect="h-full"
               className="rounded-none border-0 border-l border-border"
+              shape="soft"
             />
           </div>
         </div>

@@ -100,6 +100,7 @@ export default function InnovationHubPage() {
             src="/images/hubcross.jpg"
             alt="Hackathon event at the Innovation Hub"
             aspect="aspect-[4/3]"
+            shape="right"
           />
           <div>
             <SectionHeading

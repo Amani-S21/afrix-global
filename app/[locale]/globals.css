@@ -141,3 +141,23 @@
   background: var(--brand-blue);
   color: white;
 }
+
+@layer components {
+  .media-organic-left {
+    border-radius: 4.5rem 2rem 4.5rem 2rem;
+  }
+
+  .media-organic-right {
+    border-radius: 2rem 4.5rem 2rem 4.5rem;
+  }
+
+  @media (min-width: 768px) {
+    .media-organic-left {
+      border-radius: 48% 52% 18% 44% / 22% 28% 44% 50%;
+    }
+
+    .media-organic-right {
+      border-radius: 52% 48% 44% 18% / 28% 22% 50% 44%;
+    }
+  }
+}
