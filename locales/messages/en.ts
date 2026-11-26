@@ -52,7 +52,7 @@ export default {
       title: "We build the digital products that move businesses forward",
 
       description:
-        "Websites, mobile applications, and custom software: Afrix Global turns ideas into reliable, useful, and scalable digital solutions.",
+        "Websites, platforms, and custom software: Afrix Global turns ideas into reliable, useful, and scalable digital solutions.",
 
       cta: {
         joinProgram: "Start a project",
@@ -85,11 +85,6 @@ export default {
           title: "Websites & platforms",
           description:
             "Corporate websites, business platforms, and modern web experiences that are fast and accessible.",
-        },
-        mobile: {
-          title: "Mobile applications",
-          description:
-            "Smooth, user-focused mobile applications delivered from initial idea to deployment.",
         },
         software: {
           title: "Custom software",
@@ -180,7 +175,6 @@ export default {
 
       items: {
         web: "Web Development",
-        mobile: "Mobile Development",
         ai: "Data & AI",
         uiux: "UI/UX Design",
         marketing: "Digital Marketing",
@@ -196,7 +190,7 @@ export default {
       items: {
         dev: {
           title: "Digital Development",
-          description: "Websites, mobile apps, platforms, and custom software.",
+          description: "Websites, platforms, and custom software.",
         },
         marketing: {
           title: "Digital Marketing",
@@ -437,11 +431,6 @@ export default {
         title: "Web Development",
         description:
           "Build production-ready web applications with modern frameworks and best practices.",
-      },
-      mobile: {
-        title: "Mobile Development",
-        description:
-          "Ship cross-platform mobile apps that users love, from concept to app store.",
       },
       ai: {
         title: "Data & AI",

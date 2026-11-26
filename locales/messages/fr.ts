@@ -52,7 +52,7 @@ export default {
         "Nous concevons les produits numériques qui font avancer les entreprises",
 
       description:
-        "Sites web, applications mobiles et logiciels sur mesure : Afrix Global transforme vos idées en solutions fiables, utiles et prêtes à évoluer.",
+        "Sites web, plateformes et logiciels sur mesure : Afrix Global transforme vos idées en solutions fiables, utiles et prêtes à évoluer.",
 
       cta: {
         joinProgram: "Démarrer un projet",
@@ -85,11 +85,6 @@ export default {
           title: "Sites & plateformes web",
           description:
             "Sites vitrines, plateformes métiers et expériences web modernes, rapides et accessibles.",
-        },
-        mobile: {
-          title: "Applications mobiles",
-          description:
-            "Applications mobiles fluides et centrées sur les usages, de l'idée jusqu'au déploiement.",
         },
         software: {
           title: "Logiciels sur mesure",
@@ -180,7 +175,6 @@ export default {
 
       items: {
         web: "Développement Web",
-        mobile: "Développement Mobile",
         ai: "Data & IA",
         uiux: "UI/UX Design",
         marketing: "Marketing Digital",
@@ -197,7 +191,7 @@ export default {
         dev: {
           title: "Développement Digital",
           description:
-            "Sites web, applications mobiles, plateformes et logiciels.",
+            "Sites web, plateformes et logiciels sur mesure.",
         },
         marketing: {
           title: "Marketing Digital",
@@ -364,11 +358,6 @@ export default {
           "Concevez des applications web modernes, robustes et prêtes pour la production avec les technologies les plus demandées du marché.",
       },
 
-      mobile: {
-        title: "Développement Mobile",
-        description:
-          "Créez des applications mobiles multiplateformes performantes, de l’idée initiale jusqu’à leur publication.",
-      },
 
       ai: {
         title: "Data & Intelligence Artificielle",

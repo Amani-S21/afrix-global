@@ -59,11 +59,11 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-white/10 bg-black/90 backdrop-blur-xl">
-      <div className="mx-auto flex min-h-20 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
+      <div className="mx-auto flex min-h-20 max-w-7xl items-center gap-2 px-4 sm:px-6 lg:px-8">
         {/* LOGO */}
         <Link
           href="/"
-          className="flex items-center gap-2"
+          className="mr-auto flex items-center gap-2"
           onClick={() => setOpen(false)}
         >
           <Image
@@ -143,12 +143,6 @@ export function Navbar() {
             className="rounded-md border border-white/20 px-4 py-2.5 text-sm font-medium text-white transition-colors hover:border-white/40 hover:bg-white/5"
           >
             {t("contact")}
-          </Link>
-          <Link
-            href="/programs"
-            className="rounded-md bg-white px-4 py-2.5 text-sm font-semibold text-black transition-colors hover:bg-brand-blue hover:text-white"
-          >
-            {t("startProject")}
           </Link>
         </div>
 
@@ -235,13 +229,6 @@ export function Navbar() {
                 className="rounded-sm border border-border px-4 py-2.5 text-center text-sm font-medium text-foreground"
               >
                 {t("contact")}
-              </Link>
-              <Link
-                href="/programs"
-                onClick={() => setOpen(false)}
-                className="rounded-sm bg-primary px-4 py-2.5 text-center text-sm font-semibold text-primary-foreground"
-              >
-                {t("startProject")}
               </Link>
             </div>
           </nav>

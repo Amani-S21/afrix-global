@@ -12,7 +12,6 @@ import {
 
 import {
   Code2,
-  Smartphone,
   BrainCircuit,
   PenTool,
   Megaphone,
@@ -25,7 +24,7 @@ import {
 export const metadata: Metadata = {
   title: "Programs — Afrix Global",
   description:
-    "The Baobab Program: industry-grade bootcamps in Web, Mobile, Data & AI, UI/UX, and Digital Marketing.",
+    "The Baobab Program: industry-grade bootcamps in Web, Data & AI, UI/UX, and Digital Marketing.",
 };
 
 export default async function ProgramsPage() {
@@ -36,11 +35,6 @@ export default async function ProgramsPage() {
       icon: Code2,
       title: t("tracks.web.title"),
       desc: t("tracks.web.description"),
-    },
-    {
-      icon: Smartphone,
-      title: t("tracks.mobile.title"),
-      desc: t("tracks.mobile.description"),
     },
     {
       icon: BrainCircuit,

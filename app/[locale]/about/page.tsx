@@ -7,7 +7,6 @@ import {
   SectionHeading,
   MediaZone,
   CtaBand,
-  Eyebrow,
 } from "@/components/site";
 
 import { Target, Eye, Zap } from "lucide-react";
@@ -23,8 +22,6 @@ export default async function AboutPage() {
   const missionIndexes = [0, 1, 2, 3] as const;
   const differentiatorIndexes = [0, 1, 2] as const;
   const timelineIndexes = [0, 1, 2, 3] as const;
-  const leaderIndexes = [0, 1, 2, 3] as const;
-  const impactIndexes = [0, 1, 2, 3] as const;
 
   return (
     <>
@@ -140,24 +137,6 @@ export default async function AboutPage() {
                   {t(`timeline.items.${index}.desc`)}
                 </p>
               </div>
-            </div>
-          ))}
-        </div>
-      </Section>
-
-      {/* IMPACT */}
-      <Section className="bg-card/40">
-        <Eyebrow>{t("impact.eyebrow")}</Eyebrow>
-
-        <div className="mt-8 grid grid-cols-2 gap-px overflow-hidden rounded-sm border border-border bg-border lg:grid-cols-4">
-          {impactIndexes.map((index) => (
-            <div key={index} className="bg-background p-8">
-              <p className="text-3xl font-bold tracking-tight text-primary sm:text-4xl">
-                {t(`impact.metrics.${index}.value`)}
-              </p>
-              <p className="mt-2 text-xs font-medium uppercase tracking-wide text-muted-foreground">
-                {t(`impact.metrics.${index}.label`)}
-              </p>
             </div>
           ))}
         </div>

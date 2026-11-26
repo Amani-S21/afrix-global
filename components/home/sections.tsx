@@ -20,7 +20,6 @@ import {
   Rocket,
   Search,
   ShieldCheck,
-  Smartphone,
   PenTool,
   Workflow,
 } from "lucide-react";
@@ -32,7 +31,6 @@ export function SoftwareExpertise() {
   const t = useScopedI18n("home.expertise");
   const capabilities = [
     { icon: MonitorSmartphone, key: "web" },
-    { icon: Smartphone, key: "mobile" },
     { icon: Database, key: "software" },
     { icon: CloudCog, key: "cloud" },
   ] as const;
@@ -57,11 +55,11 @@ export function SoftwareExpertise() {
         </div>
       </div>
 
-      <div className="mt-12 grid overflow-hidden rounded-lg border border-border md:grid-cols-2 xl:grid-cols-4">
+      <div className="mt-12 grid overflow-hidden rounded-lg border border-border md:grid-cols-3">
         {capabilities.map(({ icon: Icon, key }, index) => (
           <article
             key={key}
-            className="group relative min-h-72 border-b border-border bg-card p-7 transition-colors hover:bg-white md:border-r xl:border-b-0"
+            className="group relative min-h-72 border-b border-border bg-card p-7 transition-colors hover:bg-white md:border-r md:border-b-0 md:last:border-r-0"
           >
             <div className="flex items-start justify-between">
               <div className="flex h-12 w-12 items-center justify-center rounded-md border border-white/15 bg-black text-white transition-colors group-hover:border-black/15">
@@ -203,7 +201,6 @@ export function ProgramsOverview() {
   const programT = useScopedI18n("home.programs");
   const programs = [
     { icon: Code2, title: programT("items.web") },
-    { icon: Smartphone, title: programT("items.mobile") },
     { icon: BrainCircuit, title: programT("items.ai") },
     { icon: PenTool, title: programT("items.uiux") },
     { icon: Megaphone, title: programT("items.marketing") },

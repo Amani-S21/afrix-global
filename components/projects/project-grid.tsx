@@ -11,7 +11,6 @@ type Category = (typeof categories)[number]
 const projects: { title: string; category: Exclude<Category, "All">; image: string; summary: string }[] = [
   { title: "PanAfri Pay", category: "Startup Projects", image: "/images/projects.png", summary: "A cross-border payments platform serving merchants across West Africa." },
   { title: "AgriConnect", category: "Client Projects", image: "/images/services.png", summary: "A supply-chain platform connecting smallholder farmers to global buyers." },
-  { title: "EduReach Mobile", category: "Student Projects", image: "/images/training.png", summary: "An offline-first learning app built during the Baobab mobile track." },
   { title: "HealthLink NGO Portal", category: "Client Projects", image: "/images/community.png", summary: "A patient management system for a pan-African health NGO." },
   { title: "Voca AI", category: "Innovation Prototypes", image: "/images/hackathon.png", summary: "A multilingual voice assistant prototype for African languages." },
   { title: "MarketPulse", category: "Startup Projects", image: "/images/ecosystem.png", summary: "Real-time market intelligence dashboards for SMEs." },

@@ -28,7 +28,7 @@ const serviceGroups = [
   {
     icon: Code2,
     title: "Digital Development",
-    items: ["Websites", "Mobile Apps", "Platforms", "Custom Software"],
+    items: ["Websites", "Web Platforms", "Custom Software"],
   },
   {
     icon: Megaphone,
